@@ -7,8 +7,8 @@
 
 .Precio {
     color: #D63384;
-    front-size: 20px;
-    front-weight: bold;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 @media screen and (max-width: 600px) {
