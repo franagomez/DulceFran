@@ -1,0 +1,18 @@
+.Productos {
+    border:2px solid #333;
+    padding: 15px;
+    margin: 20px;
+    width: 250px;
+}
+
+.Precio {
+    color: #D63384;
+    front-size: 20px;
+    front-weight: bold;
+}
+
+@media screen and (max-width: 600px) {
+    .Productos {
+        width: 100%;
+    }
+}
