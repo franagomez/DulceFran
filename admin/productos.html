@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de productos - DulceFran</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>DulceFran</h1>
+        <p>Panel de administración</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home admin</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="pedidos.html">Pedidos</a></li>
+            <li id="li-usuarias"><a href="usuarias.html">Usuarias</a></li>
+            <li><a href="../index.html">Volver a la tienda</a></li>
+            <li><a href="#" id="link-cerrar-sesion">Cerrar sesión</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2 class="titulo-pagina">Gestión de productos</h2>
+        <p id="nota-rol" class="nota-carrito"></p>
+
+        <div class="tabla-admin-wrap">
+            <table class="tabla-admin" id="tabla-productos">
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Nombre</th>
+                        <th>Categoría</th>
+                        <th>Precio</th>
+                        <th>Stock</th>
+                        <th>Stock crítico</th>
+                        <th id="col-acciones">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="cuerpo-tabla-productos"></tbody>
+            </table>
+        </div>
+
+        <section id="seccion-formulario">
+            <h3 id="titulo-formulario">Agregar producto</h3>
+            <form id="form-producto" class="formulario" novalidate>
+                <input type="hidden" id="codigo-original" value="">
+
+                <div class="campo">
+                    <label for="codigo">Código</label>
+                    <input type="text" id="codigo" maxlength="10" required>
+                    <span id="codigo-error" class="error"></span>
+                </div>
+
+                <div class="campo">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" maxlength="100" required>
+                    <span id="nombre-error" class="error"></span>
+                </div>
+
+                <div class="campo">
+                    <label for="categoria">Categoría</label>
+                    <select id="categoria" required>
+                        <option value="">Selecciona una categoría</option>
+                        <option>Sabores Clásicos</option>
+                        <option>Sabores Premium</option>
+                        <option>Sabores con Relleno</option>
+                        <option>Packs y Combos</option>
+                        <option>Extras y Personalización</option>
+                    </select>
+                    <span id="categoria-error" class="error"></span>
+                </div>
+
+                <div class="campo">
+                    <label for="descripcion">Descripción (opcional)</label>
+                    <textarea id="descripcion" maxlength="500" rows="3"></textarea>
+                    <span id="descripcion-error" class="error"></span>
+                </div>
+
+                <div class="campo">
+                    <label for="precio">Precio (CLP)</label>
+                    <input type="number" id="precio" min="0" step="1" required>
+                    <span id="precio-error" class="error"></span>
+                </div>
+
+                <div class="campo">
+                    <label for="stock">Stock disponible</label>
+                    <input type="number" id="stock" min="0" step="1" required>
+                    <span id="stock-error" class="error"></span>
+                </div>
+
+                <div class="campo">
+                    <label for="stockCritico">Stock mínimo de aviso (opcional)</label>
+                    <input type="number" id="stockCritico" min="0" step="1">
+                    <span id="stockCritico-error" class="error"></span>
+                </div>
+
+                <p id="mensaje-producto" class="mensaje-confirmacion"></p>
+
+                <div class="centrado">
+                    <button type="submit" class="boton" id="btn-guardar-producto">Guardar producto</button>
+                    <button type="button" class="boton boton-secundario" id="btn-cancelar-edicion" hidden>Cancelar edición</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 DulceFran - Mini donuts artesanales</p>
+    </footer>
+
+    <script src="../assets/js/productos-data.js"></script>
+    <script src="../assets/js/productos-store.js"></script>
+    <script src="../assets/js/usuarios.js"></script>
+    <script src="../assets/js/validaciones.js"></script>
+    <script src="../assets/js/admin-guard.js"></script>
+    <script src="../assets/js/admin-productos.js"></script>
+</body>
+</html>

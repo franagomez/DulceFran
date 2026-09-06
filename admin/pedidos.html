@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedidos - DulceFran</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>DulceFran</h1>
+        <p>Panel de administración</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home admin</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="pedidos.html">Pedidos</a></li>
+            <li id="li-usuarias"><a href="usuarias.html">Usuarias</a></li>
+            <li><a href="../index.html">Volver a la tienda</a></li>
+            <li><a href="#" id="link-cerrar-sesion">Cerrar sesión</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2 class="titulo-pagina">Pedidos recibidos</h2>
+        <p class="nota-carrito">
+            Este listado se llena automáticamente cuando una clienta confirma su
+            carrito de compras. Como este proyecto no tiene backend, es solo un
+            registro local del navegador donde se probó, no un pedido enviado a un
+            servidor real.
+        </p>
+
+        <div class="tabla-admin-wrap">
+            <table class="tabla-admin" id="tabla-pedidos">
+                <thead>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Clienta</th>
+                        <th>Correo</th>
+                        <th>Productos</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody id="cuerpo-tabla-pedidos"></tbody>
+            </table>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2026 DulceFran - Mini donuts artesanales</p>
+    </footer>
+
+    <script src="../assets/js/productos-data.js"></script>
+    <script src="../assets/js/productos-store.js"></script>
+    <script src="../assets/js/usuarios.js"></script>
+    <script src="../assets/js/pedidos-store.js"></script>
+    <script src="../assets/js/admin-guard.js"></script>
+    <script src="../assets/js/admin-pedidos.js"></script>
+</body>
+</html>

@@ -1,0 +1,374 @@
+/* ==========================================================
+   DulceFran - Tienda Online
+   Tabla de contenido:
+   1. Reset y base
+   2. Header y navegación
+   3. Layout general (main, footer)
+   4. Sección hero (bienvenida)
+   5. Tarjetas de producto (grid)
+   6. Botones
+   7. Responsivo (mobile-first)
+   ========================================================== */
+
+/* 1. Reset y base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+    color: #333;
+    background-color: #fffaf7;
+}
+
+/* 2. Header y navegación */
+header {
+    text-align: center;
+    padding: 1.5rem 1rem 1rem;
+    background-color: #fff0f5;
+}
+
+header h1 {
+    color: #D63384;
+    font-size: 2rem;
+}
+
+nav {
+    background-color: #D63384;
+    padding: 0.75rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.25rem 1rem;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* 3. Layout general */
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.titulo-pagina {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #D63384;
+}
+
+.categoria {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #D63384;
+    padding-bottom: 0.25rem;
+}
+
+footer {
+    background-color: #333;
+    color: #ffffff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+/* 4. Sección hero */
+.hero {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 2.5rem;
+}
+
+.hero h2 {
+    color: #D63384;
+    margin-bottom: 0.75rem;
+}
+
+.centrado {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+/* 5. Tarjetas de producto */
+.grid-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.25rem;
+}
+
+.producto {
+    border: 2px solid #333;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.producto h4 {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.Precio {
+    display: block;
+    color: #D63384;
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 0.75rem;
+}
+
+/* 6. Botones */
+.boton {
+    display: inline-block;
+    background-color: #D63384;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.6rem 1.25rem;
+    border-radius: 6px;
+}
+
+.boton:hover {
+    background-color: #b02a6e;
+}
+
+.boton-chico {
+    padding: 0.4rem 0.9rem;
+    font-size: 0.9rem;
+}
+
+/* 8. Detalle de producto */
+.detalle {
+    max-width: 500px;
+    margin: 0 auto;
+    border: 2px solid #333;
+    border-radius: 8px;
+    padding: 1.5rem;
+    background-color: #ffffff;
+}
+
+.categoria-detalle {
+    color: #777;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+}
+
+.Precio-grande {
+    font-size: 1.75rem;
+}
+
+.descripcion {
+    margin-bottom: 1rem;
+}
+
+.selector-cantidad {
+    margin-bottom: 1rem;
+}
+
+.selector-cantidad label {
+    margin-right: 0.5rem;
+}
+
+.selector-cantidad input {
+    width: 4rem;
+    padding: 0.3rem;
+}
+
+.mensaje-confirmacion {
+    margin-top: 0.75rem;
+    color: #2e7d32;
+    font-weight: bold;
+}
+
+/* 9. Carrito de compras */
+.tabla-carrito {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.fila-carrito {
+    display: grid;
+    grid-template-columns: 2fr 4rem 5rem 5rem auto;
+    align-items: center;
+    gap: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 0.75rem;
+    background-color: #ffffff;
+}
+
+.fila-cantidad {
+    width: 100%;
+    padding: 0.3rem;
+}
+
+.boton-eliminar {
+    background-color: #b02a6e;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.4rem 0.75rem;
+    cursor: pointer;
+}
+
+.boton-eliminar:hover {
+    background-color: #8a1f56;
+}
+
+.total-carrito {
+    text-align: right;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.nota-carrito {
+    font-size: 0.85rem;
+    color: #777;
+    margin-bottom: 1rem;
+}
+
+/* 10. Formularios (registro, login, contacto) */
+.formulario {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+}
+
+.campo label {
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.error {
+    color: #c62828;
+    font-size: 0.85rem;
+    min-height: 1.1rem;
+}
+
+.mensaje-error {
+    color: #c62828;
+}
+
+code {
+    background-color: #f0f0f0;
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+}
+
+/* 11. Bloques de texto (Nosotros) */
+.bloque-info {
+    max-width: 700px;
+    margin: 0 auto 2rem;
+}
+
+.bloque-info h3 {
+    color: #D63384;
+    margin-bottom: 0.5rem;
+}
+
+.bloque-info p {
+    margin-bottom: 0.75rem;
+}
+
+/* 12. Panel de administración */
+.tabla-admin-wrap {
+    overflow-x: auto;
+    margin-bottom: 2rem;
+}
+
+.tabla-admin {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+}
+
+.tabla-admin th,
+.tabla-admin td {
+    border: 1px solid #ddd;
+    padding: 0.6rem;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.tabla-admin th {
+    background-color: #D63384;
+    color: #ffffff;
+}
+
+.tabla-admin tr.fila-alerta {
+    background-color: #fff3cd;
+}
+
+.boton-secundario {
+    background-color: #777;
+}
+
+.boton-secundario:hover {
+    background-color: #555;
+}
+
+/* 13. Responsivo */
+@media screen and (max-width: 600px) {
+    header h1 {
+        font-size: 1.6rem;
+    }
+
+    nav ul {
+        gap: 0.5rem;
+    }
+
+    .fila-carrito {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "nombre nombre"
+            "cantidad precio"
+            "eliminar eliminar";
+    }
+
+    .fila-nombre { grid-area: nombre; }
+    .fila-cantidad { grid-area: cantidad; }
+    .fila-precio { grid-area: precio; }
+    .fila-subtotal { display: none; }
+    .boton-eliminar { grid-area: eliminar; }
+}
+
+@media screen and (min-width: 992px) {
+    .hero p {
+        font-size: 1.05rem;
+    }
+}

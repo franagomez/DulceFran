@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de usuarias - DulceFran</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>DulceFran</h1>
+        <p>Panel de administración</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home admin</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="pedidos.html">Pedidos</a></li>
+            <li><a href="usuarias.html">Usuarias</a></li>
+            <li><a href="../index.html">Volver a la tienda</a></li>
+            <li><a href="#" id="link-cerrar-sesion">Cerrar sesión</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2 class="titulo-pagina">Gestión de usuarias</h2>
+
+        <div class="tabla-admin-wrap">
+            <table class="tabla-admin" id="tabla-usuarias">
+                <thead>
+                    <tr>
+                        <th>RUN</th>
+                        <th>Nombre</th>
+                        <th>Correo</th>
+                        <th>Rol</th>
+                        <th>Región / Comuna</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="cuerpo-tabla-usuarias"></tbody>
+            </table>
+        </div>
+
+        <section>
+            <h3 id="titulo-formulario-usuaria">Agregar usuaria</h3>
+            <form id="form-usuaria" class="formulario" novalidate>
+                <input type="hidden" id="correo-original" value="">
+
+                <div class="campo">
+                    <label for="run">RUN (sin puntos ni guión)</label>
+                    <input type="text" id="run" maxlength="9" required>
+                    <span id="run-error" class="error"></span>
+                </div>
+
+                <div class="campo">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" maxlength="50" required>
+                    <span id="nombre-error" class="error"></span>
+                </div>
+
+                <div class="campo">
+                    <label for="apellidos">Apellidos</label>
+                    <input type="text" id="apellidos" maxlength="100" required>
+                    <span id="apellidos-error" class="error"></span>
+                </div>
+
+                <div class="campo">
+                    <label for="correo">Correo electrónico</label>
+                    <input type="email" id="correo" required>
+                    <span id="correo-error" class="error"></span>
+                </div>
+
+                <div class="campo">
+                    <label for="contrasena">Contraseña (dejar en blanco para no cambiarla al editar)</label>
+                    <input type="password" id="contrasena">
+                    <span id="contrasena-error" class="error"></span>
+                </div>
+
+                <div class="campo">
+                    <label for="fechaNacimiento">Fecha de nacimiento</label>
+                    <input type="date" id="fechaNacimiento" required>
+                    <span id="fechaNacimiento-error" class="error"></span>
+                </div>
+
+                <div class="campo">
+                    <label for="rol">Tipo de usuaria</label>
+                    <select id="rol" required>
+                        <option value="">Selecciona un rol</option>
+                        <option>Administrador</option>
+                        <option>Vendedor</option>
+                        <option>Cliente</option>
+                    </select>
+                    <span id="rol-error" class="error"></span>
+                </div>
+
+                <div class="campo">
+                    <label for="region">Región</label>
+                    <input type="text" id="region" maxlength="50" required>
+                    <span id="region-error" class="error"></span>
+                </div>
+
+                <div class="campo">
+                    <label for="comuna">Comuna</label>
+                    <input type="text" id="comuna" maxlength="100" required>
+                    <span id="comuna-error" class="error"></span>
+                </div>
+
+                <div class="campo">
+                    <label for="direccion">Dirección</label>
+                    <input type="text" id="direccion" maxlength="300" required>
+                    <span id="direccion-error" class="error"></span>
+                </div>
+
+                <p id="mensaje-usuaria" class="mensaje-confirmacion"></p>
+
+                <div class="centrado">
+                    <button type="submit" class="boton">Guardar usuaria</button>
+                    <button type="button" class="boton boton-secundario" id="btn-cancelar-edicion-usuaria" hidden>Cancelar edición</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 DulceFran - Mini donuts artesanales</p>
+    </footer>
+
+    <script src="../assets/js/productos-data.js"></script>
+    <script src="../assets/js/productos-store.js"></script>
+    <script src="../assets/js/usuarios.js"></script>
+    <script src="../assets/js/validaciones.js"></script>
+    <script src="../assets/js/admin-guard.js"></script>
+    <script src="../assets/js/admin-usuarias.js"></script>
+</body>
+</html>

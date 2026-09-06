@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DulceFran - Mini Donuts Artesanales</title>
+    <title>Iniciar sesión - DulceFran</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -24,32 +24,40 @@
         </ul>
     </nav>
     <main>
-        <section class="hero">
-            <h2>Bienvenida a DulceFran</h2>
-            <p>DulceFran es un emprendimiento artesanal de mini donuts, gestionado por
-            Panchita desde Santiago, Región Metropolitana. Nació hace poco más de un
-            año vendiendo por Instagram y WhatsApp, y hoy contamos con más de 30
-            sabores y packs para toda ocasión: cumpleaños, matrimonios y eventos
-            corporativos.</p>
-        </section>
-
-        <section class="destacados">
-            <h2>Productos destacados</h2>
-            <div class="grid-productos" id="destacados-grid">
-                <!-- JavaScript llena esto leyendo los precios actuales desde localStorage -->
+        <h2 class="titulo-pagina">Iniciar sesión</h2>
+        <form id="form-login" class="formulario" novalidate>
+            <div class="campo">
+                <label for="correo">Correo electrónico</label>
+                <input type="email" id="correo" name="correo" required>
+                <span id="correo-error" class="error"></span>
             </div>
-            <p class="centrado"><a class="boton" href="productos.html">Ver todo el catálogo</a></p>
-        </section>
+
+            <div class="campo">
+                <label for="contrasena">Contraseña</label>
+                <input type="password" id="contrasena" name="contrasena" required>
+                <span id="contrasena-error" class="error"></span>
+            </div>
+
+            <p id="mensaje-login" class="mensaje-confirmacion"></p>
+
+            <button type="submit" class="boton">Ingresar</button>
+        </form>
+
+        <p class="nota-carrito">
+            ¿No tienes cuenta? <a href="registro.html">Regístrate aquí</a>.<br>
+            Cuentas de prueba: <code>panchita@gmail.com / admin123</code> (Administrador) y
+            <code>repostera@gmail.com / vende123</code> (Vendedor).
+        </p>
     </main>
     <footer>
         <p>&copy; 2026 DulceFran - Mini donuts artesanales</p>
     </footer>
 
     <script src="assets/js/productos-data.js"></script>
-    <script src="assets/js/productos-store.js"></script>
     <script src="assets/js/carrito.js"></script>
     <script src="assets/js/usuarios.js"></script>
+    <script src="assets/js/validaciones.js"></script>
     <script src="assets/js/sesion-nav.js"></script>
-    <script src="assets/js/home.js"></script>
+    <script src="assets/js/login.js"></script>
 </body>
 </html>

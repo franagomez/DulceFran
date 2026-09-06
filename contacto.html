@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - DulceFran</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>DulceFran</h1>
+        <p>Mini donuts artesanales hechas con cariño</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li id="li-login"><a href="login.html">Iniciar sesión</a></li>
+            <li id="li-registro"><a href="registro.html">Registrarse</a></li>
+            <li><a href="carrito.html">Carrito 🛒 (<span id="contador-carrito">0</span>)</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2 class="titulo-pagina">Contáctanos</h2>
+        <p class="hero">¿Tienes dudas sobre un pedido, un evento o quieres cotizar algo especial?
+        Escríbenos y te responderemos a la brevedad.</p>
+
+        <form id="form-contacto" class="formulario" novalidate>
+            <div class="campo">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" maxlength="100" required>
+                <span id="nombre-error" class="error"></span>
+            </div>
+
+            <div class="campo">
+                <label for="correo">Correo electrónico</label>
+                <input type="email" id="correo" name="correo" required>
+                <span id="correo-error" class="error"></span>
+            </div>
+
+            <div class="campo">
+                <label for="comentario">Comentario</label>
+                <textarea id="comentario" name="comentario" rows="5" maxlength="500" required></textarea>
+                <span id="comentario-error" class="error"></span>
+            </div>
+
+            <p id="mensaje-contacto" class="mensaje-confirmacion"></p>
+
+            <button type="submit" class="boton">Enviar mensaje</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2026 DulceFran - Mini donuts artesanales</p>
+    </footer>
+
+    <script src="assets/js/productos-data.js"></script>
+    <script src="assets/js/carrito.js"></script>
+    <script src="assets/js/usuarios.js"></script>
+    <script src="assets/js/validaciones.js"></script>
+    <script src="assets/js/sesion-nav.js"></script>
+    <script src="assets/js/contacto.js"></script>
+</body>
+</html>
