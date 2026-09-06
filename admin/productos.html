@@ -8,6 +8,7 @@
 </head>
 <body>
     <header>
+        <img src="../assets/img/logo.jpg" alt="Logo DulceFran" class="logo-header">
         <h1>DulceFran</h1>
         <p>Panel de administración</p>
     </header>
@@ -94,6 +95,12 @@
                     <label for="stockCritico">Stock mínimo de aviso (opcional)</label>
                     <input type="number" id="stockCritico" min="0" step="1">
                     <span id="stockCritico-error" class="error"></span>
+                </div>
+
+                <div class="campo">
+                    <label for="imagenUrl">Imagen (URL, opcional)</label>
+                    <input type="text" id="imagenUrl" placeholder="assets/img/dona-hero.jpg">
+                    <span id="imagenUrl-error" class="error"></span>
                 </div>
 
                 <p id="mensaje-producto" class="mensaje-confirmacion"></p>

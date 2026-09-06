@@ -17,6 +17,12 @@
     padding: 0;
 }
 
+/* El atributo HTML "hidden" debe ganar siempre, aunque el elemento
+   también tenga una clase como .boton que define su propio "display". */
+[hidden] {
+    display: none !important;
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.5;
@@ -34,6 +40,15 @@ header {
 header h1 {
     color: #D63384;
     font-size: 2rem;
+}
+
+.logo-header {
+    display: block;
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 auto 0.5rem;
 }
 
 nav {
@@ -99,6 +114,16 @@ footer {
     margin-bottom: 0.75rem;
 }
 
+.hero-img {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin: 0 auto 1.25rem;
+}
+
 .centrado {
     text-align: center;
     margin-top: 1.5rem;
@@ -117,6 +142,15 @@ footer {
     padding: 15px;
     text-align: center;
     background-color: #ffffff;
+}
+
+.producto img {
+    display: block;
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 0.6rem;
 }
 
 .producto h4 {
@@ -160,6 +194,15 @@ footer {
     border-radius: 8px;
     padding: 1.5rem;
     background-color: #ffffff;
+}
+
+.detalle img {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
 }
 
 .categoria-detalle {

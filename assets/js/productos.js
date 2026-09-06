@@ -30,6 +30,7 @@ function renderizarCatalogo() {
         productosCategoria.forEach(function (p) {
             html +=
                 '<article class="producto" data-codigo="' + p.codigo + '">' +
+                (p.imagenUrl ? '<img src="' + p.imagenUrl + '" alt="Foto de ' + p.nombre + '">' : '') +
                 '<h4>' + p.nombre + '</h4>' +
                 '<span class="Precio">' + formatoPrecio(p.precio) + '</span>' +
                 '<a class="boton boton-chico" href="producto-detalle.html?codigo=' + p.codigo + '">Ver detalle</a>' +

@@ -67,6 +67,7 @@ function cargarProductoEnFormulario(codigo) {
     document.getElementById("precio").value = p.precio;
     document.getElementById("stock").value = p.stock;
     document.getElementById("stockCritico").value = p.stockCritico;
+    document.getElementById("imagenUrl").value = p.imagenUrl || "";
     document.getElementById("btn-cancelar-edicion").hidden = false;
     window.scrollTo({ top: document.getElementById("seccion-formulario").offsetTop, behavior: "smooth" });
 }
@@ -118,6 +119,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const stock = parseInt(document.getElementById("stock").value, 10);
         const stockCriticoValor = document.getElementById("stockCritico").value;
         const stockCritico = stockCriticoValor === "" ? 0 : parseInt(stockCriticoValor, 10);
+        const imagenUrl = document.getElementById("imagenUrl").value.trim();
 
         let esValido = true;
 
@@ -160,7 +162,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const datosProducto = {
             codigo: codigo, nombre: nombre, categoria: categoria,
-            descripcion: descripcion, precio: precio, stock: stock, stockCritico: stockCritico
+            descripcion: descripcion, precio: precio, stock: stock, stockCritico: stockCritico,
+            imagenUrl: imagenUrl
         };
 
         let resultado;

@@ -16,6 +16,7 @@ function renderizarDestacados() {
         if (!p) { return ""; }
 
         return '<article class="producto" data-codigo="' + p.codigo + '">' +
+            (p.imagenUrl ? '<img src="' + p.imagenUrl + '" alt="Foto de ' + p.nombre + '">' : '') +
             '<h4>' + p.nombre + '</h4>' +
             '<p>' + p.categoria + '</p>' +
             '<span class="Precio">$' + p.precio.toLocaleString('es-CL') + '</span>' +

@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     contenedor.innerHTML =
         '<article class="detalle">' +
+        (producto.imagenUrl ? '<img src="' + producto.imagenUrl + '" alt="Foto de ' + producto.nombre + '">' : '') +
         '<p class="categoria-detalle">' + producto.categoria + '</p>' +
         '<h2>' + producto.nombre + '</h2>' +
         '<span class="Precio Precio-grande">$' + producto.precio.toLocaleString('es-CL') + '</span>' +
