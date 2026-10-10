@@ -1,24 +1,16 @@
-# DulceFran - Tienda Online
+# React + Vite
 
-Proyecto de tienda online para DulceFran (mini donas artesanales), desarrollado
-como parte de la Evaluación Parcial 1 de la asignatura DSY1104 - Desarrollo
-Full Stack II (Duoc UC). El sitio también quedará disponible para el uso real
-del negocio DulceFran.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Estructura del proyecto
+Currently, two official plugins are available:
 
-- Páginas de la tienda pública (Home, Productos, Detalle de producto,
-  Registro, Login, Nosotros, Blog, Contacto) en la raíz del proyecto.
-- `admin/`: panel de administración (gestión de productos y usuarias).
-- `assets/css/`: hojas de estilo.
-- `assets/js/`: lógica en JavaScript (validaciones, carrito de compras, etc.).
-- `assets/img/`: imágenes del sitio.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## Tecnologías
+## React Compiler
 
-HTML5, CSS3 y JavaScript puro (sin frameworks ni backend). El carrito de
-compras se persiste en el navegador mediante `localStorage`.
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Autora
+## Expanding the ESLint configuration
 
-Francisca Gómez Cancino
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
