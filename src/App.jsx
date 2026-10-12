@@ -2,11 +2,17 @@ import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
+import { Home } from "./pages/Home";
 import { Productos } from "./pages/Productos";
 import { ProductoDetalle } from "./pages/ProductoDetalle";
 import { Carrito } from "./pages/Carrito";
 import { Registro } from "./pages/Registro";
 import { Login } from "./pages/Login";
+import { Nosotros } from "./pages/Nosotros";
+import { Blog } from "./pages/Blog";
+import { BlogDetalle1 } from "./pages/BlogDetalle1";
+import { BlogDetalle2 } from "./pages/BlogDetalle2";
+import { Contacto } from "./pages/Contacto";
 import { obtenerProductos } from "./data/productos";
 import {
   obtenerCarrito,
@@ -63,7 +69,7 @@ function App() {
 
       <main>
         <Routes>
-          <Route path="/" element={<h1>Bienvenida a DulceFran 🍩</h1>} />
+          <Route path="/" element={<Home productos={productos} />} />
           <Route path="/productos" element={<Productos productos={productos} />} />
           <Route
             path="/productos/:codigo"
@@ -82,6 +88,11 @@ function App() {
           />
           <Route path="/registro" element={<Registro />} />
           <Route path="/login" element={<Login iniciarSesionApp={iniciarSesionApp} />} />
+          <Route path="/nosotros" element={<Nosotros />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/5-datos-curiosos" element={<BlogDetalle1 />} />
+          <Route path="/blog/pack-perfecto-evento" element={<BlogDetalle2 />} />
+          <Route path="/contacto" element={<Contacto />} />
         </Routes>
       </main>
 
