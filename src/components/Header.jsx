@@ -1,6 +1,9 @@
 import { NavLink } from "react-router";
+import { totalUnidadesCarrito } from "../data/carrito";
 
-export function Header() {
+export function Header({ carrito, sesion, cerrarSesion }) {
+  const totalCarrito = totalUnidadesCarrito(carrito);
+
   return (
     <header>
       <nav className="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
@@ -35,14 +38,33 @@ export function Header() {
               <li className="nav-item">
                 <NavLink className="nav-link" to="/contacto">Contacto</NavLink>
               </li>
+
+              {sesion ? (
+                <>
+                  <li className="nav-item">
+                    <span className="nav-link">Hola, {sesion.nombre}</span>
+                  </li>
+                  <li className="nav-item">
+                    <button className="btn btn-link nav-link" onClick={cerrarSesion}>
+                      Cerrar sesión
+                    </button>
+                  </li>
+                </>
+              ) : (
+                <>
+                  <li className="nav-item">
+                    <NavLink className="nav-link" to="/login">Iniciar sesión</NavLink>
+                  </li>
+                  <li className="nav-item">
+                    <NavLink className="nav-link" to="/registro">Registrarse</NavLink>
+                  </li>
+                </>
+              )}
+
               <li className="nav-item">
-                <NavLink className="nav-link" to="/login">Iniciar sesión</NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/registro">Registrarse</NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/carrito">Carrito 🛒</NavLink>
+                <NavLink className="nav-link" to="/carrito">
+                  Carrito 🛒 ({totalCarrito})
+                </NavLink>
               </li>
             </ul>
           </div>
