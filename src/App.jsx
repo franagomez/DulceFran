@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
+import { RutaProtegida } from "./components/RutaProtegida";
 import { Home } from "./pages/Home";
 import { Productos } from "./pages/Productos";
 import { ProductoDetalle } from "./pages/ProductoDetalle";
@@ -13,6 +14,8 @@ import { Blog } from "./pages/Blog";
 import { BlogDetalle1 } from "./pages/BlogDetalle1";
 import { BlogDetalle2 } from "./pages/BlogDetalle2";
 import { Contacto } from "./pages/Contacto";
+import { AdminLayout } from "./pages/admin/AdminLayout";
+import { AdminHome } from "./pages/admin/AdminHome";
 import { obtenerProductos } from "./data/productos";
 import {
   obtenerCarrito,
@@ -93,6 +96,17 @@ function App() {
           <Route path="/blog/5-datos-curiosos" element={<BlogDetalle1 />} />
           <Route path="/blog/pack-perfecto-evento" element={<BlogDetalle2 />} />
           <Route path="/contacto" element={<Contacto />} />
+
+          <Route
+            path="/admin"
+            element={
+              <RutaProtegida sesion={sesion} rolesPermitidos={["Administrador", "Vendedor"]}>
+                <AdminLayout sesion={sesion} cerrarSesion={cerrarSesionApp} />
+              </RutaProtegida>
+            }
+          >
+            <Route index element={<AdminHome sesion={sesion} productos={productos} />} />
+          </Route>
         </Routes>
       </main>
 
