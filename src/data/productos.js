@@ -89,3 +89,7 @@ export function eliminarProducto(codigo) {
   productos = productos.filter((p) => p.codigo !== codigo);
   guardarProductos(productos);
 }
+
+export function formatoPrecio(numero) {
+  return "$" + numero.toLocaleString("es-CL");
+}
