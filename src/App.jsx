@@ -17,6 +17,7 @@ import { Contacto } from "./pages/Contacto";
 import { AdminLayout } from "./pages/admin/AdminLayout";
 import { AdminHome } from "./pages/admin/AdminHome";
 import { AdminProductos } from "./pages/admin/AdminProductos";
+import { AdminUsuarias } from "./pages/admin/AdminUsuarias";
 import { obtenerProductos } from "./data/productos";
 import {
   obtenerCarrito,
@@ -111,6 +112,7 @@ function App() {
               path="productos"
               element={<AdminProductos sesion={sesion} productos={productos} setProductos={setProductos} />}
             />
+            <Route path="usuarias" element={<AdminUsuarias sesion={sesion} />} />
           </Route>
         </Routes>
       </main>
