@@ -16,6 +16,7 @@ import { BlogDetalle2 } from "./pages/BlogDetalle2";
 import { Contacto } from "./pages/Contacto";
 import { AdminLayout } from "./pages/admin/AdminLayout";
 import { AdminHome } from "./pages/admin/AdminHome";
+import { AdminProductos } from "./pages/admin/AdminProductos";
 import { obtenerProductos } from "./data/productos";
 import {
   obtenerCarrito,
@@ -32,7 +33,7 @@ import {
 import "./App.css";
 
 function App() {
-  const [productos] = useState(() => obtenerProductos());
+  const [productos, setProductos] = useState(() => obtenerProductos());
   const [carrito, setCarrito] = useState(() => obtenerCarrito());
 
   useEffect(() => {
@@ -106,6 +107,10 @@ function App() {
             }
           >
             <Route index element={<AdminHome sesion={sesion} productos={productos} />} />
+            <Route
+              path="productos"
+              element={<AdminProductos sesion={sesion} productos={productos} setProductos={setProductos} />}
+            />
           </Route>
         </Routes>
       </main>
