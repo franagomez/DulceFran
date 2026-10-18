@@ -1,7 +1,11 @@
+import { useState } from "react";
 import { NavLink } from "react-router";
 import { formatoPrecio } from "../data/productos";
+import { registrarPedido } from "../data/pedidos";
 
-export function Carrito({ carrito, productos, cambiarCantidad, eliminarDelCarrito }) {
+export function Carrito({ carrito, productos, cambiarCantidad, eliminarDelCarrito, vaciarCarrito, sesion }) {
+  const [pedidoConfirmado, setPedidoConfirmado] = useState(false);
+
   const items = carrito
     .map((item) => {
       const producto = productos.find((p) => p.codigo === item.codigo);
@@ -10,6 +14,32 @@ export function Carrito({ carrito, productos, cambiarCantidad, eliminarDelCarrit
     .filter((item) => item !== null);
 
   const total = items.reduce((suma, item) => suma + item.producto.precio * item.cantidad, 0);
+
+  function manejarConfirmar() {
+    const itemsPedido = items.map((item) => ({
+      codigo: item.producto.codigo,
+      nombre: item.producto.nombre,
+      cantidad: item.cantidad,
+      precioUnitario: item.producto.precio,
+      subtotal: item.producto.precio * item.cantidad,
+    }));
+
+    registrarPedido(sesion, itemsPedido, total);
+    vaciarCarrito();
+    setPedidoConfirmado(true);
+  }
+
+  if (pedidoConfirmado) {
+    return (
+      <div className="container py-5">
+        <h1 className="mb-4">¡Pedido confirmado!</h1>
+        <p>Gracias por tu compra en DulceFran. Pronto nos pondremos en contacto para coordinar la entrega.</p>
+        <NavLink to="/productos" className="btn btn-primary">
+          Seguir comprando
+        </NavLink>
+      </div>
+    );
+  }
 
   if (items.length === 0) {
     return (
@@ -52,10 +82,7 @@ export function Carrito({ carrito, productos, cambiarCantidad, eliminarDelCarrit
               </td>
               <td>{formatoPrecio(item.producto.precio * item.cantidad)}</td>
               <td>
-                <button
-                  className="btn btn-outline-danger btn-sm"
-                  onClick={() => eliminarDelCarrito(item.codigo)}
-                >
+                <button className="btn btn-outline-danger btn-sm" onClick={() => eliminarDelCarrito(item.codigo)}>
                   Eliminar
                 </button>
               </td>
@@ -64,7 +91,12 @@ export function Carrito({ carrito, productos, cambiarCantidad, eliminarDelCarrit
         </tbody>
       </table>
 
-      <h2 className="h4 text-end">Total: {formatoPrecio(total)}</h2>
+      <div className="text-end">
+        <h2 className="h4">Total: {formatoPrecio(total)}</h2>
+        <button className="btn btn-success" onClick={manejarConfirmar}>
+          Confirmar pedido
+        </button>
+      </div>
     </div>
   );
 }

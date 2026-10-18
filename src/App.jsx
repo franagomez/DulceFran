@@ -18,6 +18,7 @@ import { AdminLayout } from "./pages/admin/AdminLayout";
 import { AdminHome } from "./pages/admin/AdminHome";
 import { AdminProductos } from "./pages/admin/AdminProductos";
 import { AdminUsuarias } from "./pages/admin/AdminUsuarias";
+import { AdminPedidos } from "./pages/admin/AdminPedidos";
 import { obtenerProductos } from "./data/productos";
 import {
   obtenerCarrito,
@@ -68,6 +69,10 @@ function App() {
     setCarrito((carritoActual) => eliminarDelCarritoData(carritoActual, codigo));
   }
 
+  function vaciarCarritoApp() {
+    setCarrito([]);
+  }
+
   return (
     <BrowserRouter>
       <Header carrito={carrito} sesion={sesion} cerrarSesion={cerrarSesionApp} />
@@ -88,6 +93,8 @@ function App() {
                 productos={productos}
                 cambiarCantidad={cambiarCantidadApp}
                 eliminarDelCarrito={eliminarDelCarritoApp}
+                vaciarCarrito={vaciarCarritoApp}
+                sesion={sesion}
               />
             }
           />
@@ -113,6 +120,7 @@ function App() {
               element={<AdminProductos sesion={sesion} productos={productos} setProductos={setProductos} />}
             />
             <Route path="usuarias" element={<AdminUsuarias sesion={sesion} />} />
+            <Route path="pedidos" element={<AdminPedidos />} />
           </Route>
         </Routes>
       </main>
