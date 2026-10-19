@@ -36,13 +36,13 @@ export function Login({ iniciarSesionApp }) {
 
       <form onSubmit={manejarEnvio}>
         <div className="mb-3">
-          <label className="form-label">Correo</label>
-          <input type="email" className="form-control" value={correo} onChange={(e) => setCorreo(e.target.value)} />
+          <label htmlFor="correo" className="form-label">Correo</label>
+          <input id="correo" type="email" className="form-control" value={correo} onChange={(e) => setCorreo(e.target.value)} />
         </div>
 
         <div className="mb-3">
-          <label className="form-label">Contraseña</label>
-          <input type="password" className="form-control" value={contrasena} onChange={(e) => setContrasena(e.target.value)} />
+          <label htmlFor="contrasena" className="form-label">Contraseña</label>
+          <input id="contrasena" type="password" className="form-control" value={contrasena} onChange={(e) => setContrasena(e.target.value)} />
         </div>
 
         <button type="submit" className="btn btn-primary w-100">Entrar</button>
