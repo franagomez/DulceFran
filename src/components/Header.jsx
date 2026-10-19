@@ -3,6 +3,7 @@ import { totalUnidadesCarrito } from "../data/carrito";
 
 export function Header({ carrito, sesion, cerrarSesion }) {
   const totalCarrito = totalUnidadesCarrito(carrito);
+  const esStaff = sesion && (sesion.rol === "Administrador" || sesion.rol === "Vendedor");
 
   return (
     <header>
@@ -38,6 +39,14 @@ export function Header({ carrito, sesion, cerrarSesion }) {
               <li className="nav-item">
                 <NavLink className="nav-link" to="/contacto">Contacto</NavLink>
               </li>
+
+              {esStaff && (
+                <li className="nav-item">
+                  <NavLink className="nav-link fw-bold" to="/admin">
+                    Admin ⚙️
+                  </NavLink>
+                </li>
+              )}
 
               {sesion ? (
                 <>
